@@ -13,15 +13,16 @@
 
 같은 세 흐름은 커넥터 서버의 프롬프트(`season_close_check` · `round_review` · `season_pay_report`)로도 들어 있어요.
 
-## 먼저: 커넥터 연결
+## 설치와 연결
 
-이 플러그인에는 열쇠가 들어 있지 않아요(플러그인 파일은 설치하는 모든 사람에게 그대로 전달돼요). 커넥터는 따로 붙여요.
+이 플러그인에는 커넥터 주소(`.mcp.json`)만 들어 있고 열쇠는 없어요(플러그인 파일은 설치하는 모든 사람에게 그대로 전달돼요). 열쇠는 연결할 때 정산을 부탁해 로그인 · 동의 화면에서 만들어져 Claude 에 건네져요.
 
-1. 정산을 부탁해 앱 › 비서 › 플러그인 설정 › 외부 AI 도구 연결에서 열쇠를 만들어요. 열쇠는 크루 하나에 묶이고 7 · 30 · 90일 뒤 만료돼요.
-2. 연결해요.
-   - **Claude 앱(claude.ai · Cowork · 데스크톱)**: 커넥터 화면에서 추가 › 맞춤 커넥터 추가 → 이름 「정산을 부탁해」, 주소 `https://settlement-studio.vercel.app/api/mcp` → 인증 「로그인 없음」 → 요청 머리 `authorization` = `Bearer <열쇠>`. 팀 · 기업 요금제는 조직 소유자가 조직 설정 › 커넥터에서 추가해요. 요청 머리 칸은 Claude 쪽 베타라 안 보일 수 있어요.
-   - **Claude Code**: `claude mcp add --transport http settlement https://settlement-studio.vercel.app/api/mcp --header "Authorization: Bearer <열쇠>"`
-3. 플러그인을 설치해요. 이 폴더가 든 저장소를 마켓으로 추가(Customize › Plugins › Add › Add marketplace)하거나, Claude Code 에서 `claude --plugin-dir ./settlement-studio` 로 시험해요.
+1. 플러그인을 설치해요.
+   - **Claude 앱(claude.ai · Cowork · 데스크톱)**: Customize › Plugins › Add marketplace 에 `mupozg823/settlement-studio-claude` 를 넣고 「정산을 부탁해」를 설치해요.
+   - **Claude Code**: `/plugin marketplace add mupozg823/settlement-studio-claude` 뒤 `/plugin install settlement-studio@settlement-studio`
+2. 연결해요. 커넥터 `settlement` 를 처음 쓸 때(Claude Code 는 `/mcp` 에서 고르고 인증) 정산을 부탁해 로그인 · 동의 화면이 열려요. 크루와 기한(7 · 30 · 90일)을 고르고 「연결」을 누르면 끝이에요. 만든 열쇠는 앱 › 비서 › 플러그인 설정 › 외부 AI 도구 연결의 「만든 열쇠」에 「OAuth · 앱 이름」으로 나와요. 기한이 지나면 다시 연결해 주세요.
+
+플러그인 없이 커넥터만 붙여도 돼요. Claude 앱은 커넥터 화면 › 맞춤 커넥터 추가에 주소 `https://settlement-studio.vercel.app/api/mcp` 만 넣고 연결해요(팀 · 기업 요금제는 조직 소유자가 조직 설정 › 커넥터에서 추가). 로그인 대신 열쇠를 직접 쓰려면 앱에서 열쇠를 만들어 `claude mcp add --transport http settlement https://settlement-studio.vercel.app/api/mcp --header "Authorization: Bearer <열쇠>"` 처럼 요청 머리로 넣어요. 이미 이렇게 붙인 커넥터가 있으면 플러그인 커넥터와 둘 중 하나만 남겨요.
 
 ## 나가는 것과 안 나가는 것
 

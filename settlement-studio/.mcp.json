@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "settlement": {
+      "type": "http",
+      "url": "https://settlement-studio.vercel.app/api/mcp"
+    }
+  }
+}

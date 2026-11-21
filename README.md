@@ -22,7 +22,7 @@
 /plugin install settlement-studio@settlement-studio
 ```
 
-## 커넥터 연결
+## 연결
 
-스킬은 「정산을 부탁해」 커넥터의 읽기 도구를 써요. 연결 방법은 [플러그인 안내](settlement-studio/README.md)에 있어요.
+플러그인을 설치하면 「정산을 부탁해」 커넥터(`.mcp.json`, 주소만)가 같이 들어와요. 처음 쓸 때(Claude Code 는 `/mcp` 에서 인증) 정산을 부탁해 로그인 · 동의 화면에서 크루와 기한을 고르고 「연결」을 누르면 돼요. 자세한 내용은 [플러그인 안내](settlement-studio/README.md)에 있어요.
 열쇠(비밀값)는 이 저장소에 들어 있지 않아요.

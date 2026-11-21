@@ -1,8 +1,8 @@
 {
   "name": "settlement-studio",
   "displayName": "정산을 부탁해",
-  "version": "0.1.0",
-  "description": "방송 크루 후원 정산 장부(정산을 부탁해)를 읽기 전용으로 보고 시즌 마감 검산 · 회차 점검 · BJ 지급 요약을 정리하는 스킬 묶음. 정산을 부탁해 커넥터(읽기 열쇠)가 연결돼 있어야 해요.",
+  "version": "0.2.0",
+  "description": "방송 크루 후원 정산 장부(정산을 부탁해)를 읽기 전용으로 보고 시즌 마감 검산 · 회차 점검 · BJ 지급 요약을 정리하는 스킬 묶음. 설치하면 정산을 부탁해 커넥터가 같이 들어오고, 처음 쓸 때 정산을 부탁해 로그인 · 동의로 연결해요.",
   "author": { "name": "정산을 부탁해", "url": "https://settlement-studio.vercel.app" },
   "license": "LicenseRef-Proprietary"
 }
