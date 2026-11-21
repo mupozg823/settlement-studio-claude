@@ -5,11 +5,11 @@ description: 방송 크루의 한 회차(방송) 후원 결과를 정산을 부�
 
 # 회차 점검
 
-정산을 부탁해 커넥터의 읽기 전용 도구만 쓴다: `list_rounds` · `round_totals_by_bj`.
+정산을 부탁해 커넥터의 읽기 전용 도구만 쓴다: `list_seasons` · `list_rounds` · `round_totals_by_bj`.
 
 ## 순서
 
-1. 시즌과 회차 이름이 없으면 `list_rounds` 로 목록을 보여 주고 고르게 한다.
+1. 시즌 이름이 없으면 `list_seasons` 로 시즌 목록을, 회차 이름이 없으면 `list_rounds` 로 회차 목록을 보여 주고 고르게 한다.
 2. `round_totals_by_bj` 에 시즌과 회차를 넣어 이번 회차의 BJ별 합계를 읽는다.
 3. `list_rounds` 순서에서 바로 앞 회차를 찾아 같은 방법으로 읽는다.
 4. 표를 만든다: BJ · 이번 회차 · 앞 회차 · 증감 · 증감률. 증감이 큰 순서로 정렬한다.

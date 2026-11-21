@@ -5,13 +5,13 @@ description: 방송 크루 시즌을 마감하기 전에 정산을 부탁해 장
 
 # 시즌 마감 검산
 
-정산을 부탁해 커넥터의 읽기 전용 도구만 쓴다: `whoami` · `list_rounds` · `round_totals_by_bj` · `season_finals`.
+정산을 부탁해 커넥터의 읽기 전용 도구만 쓴다: `whoami` · `list_seasons` · `list_rounds` · `round_totals_by_bj` · `season_finals`.
 도구가 보이지 않으면 아래 「연결이 안 될 때」를 안내하고 멈춘다.
 
 ## 순서
 
 1. `whoami` 로 열쇠가 가리키는 크루와 만료 시각을 확인한다. 만료가 가까우면 한 줄로 알린다.
-2. `list_rounds` 에 시즌 이름을 넣어 회차 목록을 읽는다.
+2. 시즌 이름이 확실하지 않으면 `list_seasons` 로 시즌 목록과 확정 여부를 먼저 보여 주고 고르게 한다. 그 시즌의 `list_rounds` 에 시즌 이름을 넣어 회차 목록을 읽는다.
    - 회차 번호가 비는 곳(1, 2, 4회차)과 같은 회차가 두 번 있는 곳을 찾는다.
    - 건수가 0인 회차를 따로 적는다.
 3. `round_totals_by_bj` 로 회차마다 BJ별 원자료 합계를 읽는다.
